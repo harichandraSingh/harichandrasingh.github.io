@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harichandra Singh | Personal Branding Website</title>
+  <meta name="description" content="Professional personal branding website for Harichandra Singh — agriculture instructor, trainer, digital creator, and founder of Learn Krishi Official." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #08140d;
+      --bg-soft: #0f1f15;
+      --panel: rgba(255,255,255,0.08);
+      --card: #ffffff;
+      --text: #ebf4ee;
+      --text-dark: #142017;
+      --muted: #b8c8bb;
+      --muted-dark: #5a695f;
+      --primary: #33b066;
+      --primary-dark: #1c7a45;
+      --accent: #a8f2b5;
+      --line: rgba(255,255,255,0.12);
+      --shadow: 0 22px 60px rgba(0,0,0,0.18);
+      --shadow-soft: 0 16px 40px rgba(15,31,21,0.08);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --transition: 280ms ease;
+      --container: min(1220px, 92vw);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(51,176,102,0.24), transparent 26%),
+        radial-gradient(circle at top right, rgba(168,242,181,0.14), transparent 22%),
+        linear-gradient(180deg, #06110b 0%, #0c1912 34%, #eef6f0 34%, #eef6f0 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .container { width: var(--container); margin: 0 auto; }
+    .site-shell { position: relative; overflow: hidden; }
+    .hero-orb, .hero-orb-2 {
+      position: absolute; border-radius: 50%; filter: blur(30px); pointer-events: none;
+    }
+    .hero-orb {
+      width: 360px; height: 360px; background: rgba(51,176,102,0.14); top: -80px; right: -40px;
+    }
+    .hero-orb-2 {
+      width: 280px; height: 280px; background: rgba(255,255,255,0.08); left: -60px; top: 180px;
+    }
+
+    .update-ticker {
+      background: linear-gradient(90deg, rgba(51,176,102,0.22), rgba(168,242,181,0.10));
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+      position: relative;
+      z-index: 60;
+    }
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: tickerMove 28s linear infinite;
+      will-change: transform;
+    }
+    .ticker-item {
+      white-space: nowrap;
+      padding: 12px 26px;
+      color: #ecfff1;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .ticker-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: #9effb0;
+      box-shadow: 0 0 0 6px rgba(158,255,176,0.14);
+      flex: 0 0 auto;
+    }
+    @keyframes tickerMove {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .topbar {
+      padding: 18px 0;
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(8,20,13,0.74);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .topbar-inner {
+      width: var(--container); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+    }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand-mark {
+      width: 48px; height: 48px; border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), #85df9a);
+      display: grid; place-items: center; color: #04120a; font-weight: 800; box-shadow: var(--shadow);
+    }
+    .brand h1 { font-size: 1.04rem; font-weight: 800; letter-spacing: 0.02em; }
+    .brand p { font-size: 0.88rem; color: var(--muted); }
+
+    .nav-links {
+      display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end;
+    }
+    .nav-links button {
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 16px;
+      font: inherit;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .nav-links button:hover,
+    .nav-links button.active {
+      background: linear-gradient(135deg, rgba(51,176,102,0.24), rgba(168,242,181,0.18));
+      border-color: rgba(168,242,181,0.3);
+      transform: translateY(-1px);
+    }
+
+    .hero { padding: 58px 0 44px; position: relative; }
+    .hero-grid {
+      width: var(--container); margin: 0 auto;
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 30px; align-items: center;
+    }
+    .hero-copy { position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 14px; border-radius: 999px;
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+      color: var(--accent); font-size: 0.85rem; margin-bottom: 18px;
+    }
+    .hero h2 {
+      font-size: clamp(2.2rem, 5vw, 4.5rem);
+      line-height: 1.03; letter-spacing: -0.04em; margin-bottom: 16px;
+    }
+    .hero h2 span {
+      background: linear-gradient(135deg, #ffffff 0%, #a8f2b5 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero p { color: var(--muted); font-size: 1.05rem; max-width: 700px; margin-bottom: 22px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      border-radius: 14px; padding: 14px 20px; font-weight: 700; font-size: 0.97rem;
+      transition: var(--transition); border: 1px solid transparent; cursor: pointer;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white;
+      box-shadow: 0 18px 32px rgba(51,176,102,0.22);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.06); color: var(--text); border-color: rgba(255,255,255,0.1);
+    }
+    .btn:hover { transform: translateY(-2px); }
+
+    .hero-card {
+      position: relative; z-index: 1;
+      padding: 28px; border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, rgba(255,255,255,0.13), rgba(255,255,255,0.06));
+      backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: var(--shadow);
+    }
+    .profile-wrap {
+      display: grid; grid-template-columns: 168px 1fr; gap: 22px; align-items: center; margin-bottom: 24px;
+    }
+    .avatar-shell {
+      width: 168px; height: 168px; border-radius: 50%; padding: 6px;
+      background: linear-gradient(135deg, var(--accent), var(--primary-dark));
+      box-shadow: 0 18px 36px rgba(0,0,0,0.20);
+    }
+    .avatar-shell img {
+      width: 100%; height: 100%; border-radius: 50%; object-fit: cover; background: #d9e6db;
+    }
+    .profile-wrap small { color: var(--accent); display: block; margin-bottom: 8px; }
+    .profile-wrap h3 { font-size: 1.72rem; margin-bottom: 8px; }
+    .profile-wrap p { color: var(--muted); font-size: 0.97rem; }
+
+    .stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    }
+    .stat {
+      padding: 16px; border-radius: 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat strong { display: block; font-size: 1.3rem; margin-bottom: 5px; }
+    .stat span { color: var(--muted); font-size: 0.86rem; }
+
+    .main {
+      position: relative; z-index: 2;
+      width: var(--container); margin: 0 auto 44px; margin-top: 10px;
+    }
+    .dashboard {
+      background: #eef6f0; color: var(--text-dark);
+      border-radius: 34px; padding: 20px;
+      box-shadow: 0 20px 60px rgba(12, 30, 18, 0.12);
+    }
+    .quick-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 20px;
+    }
+    .quick-card {
+      background: #ffffff; border-radius: 20px; padding: 18px;
+      border: 1px solid rgba(20,32,23,0.06); box-shadow: 0 10px 30px rgba(15, 31, 21, 0.06);
+      transition: var(--transition); cursor: pointer;
+    }
+    .quick-card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(15,31,21,0.08); }
+    .quick-card small {
+      display: inline-flex; padding: 6px 10px; border-radius: 999px; background: rgba(51,176,102,0.12); color: var(--primary-dark); font-weight: 700; margin-bottom: 12px;
+    }
+    .quick-card h4 { font-size: 1.02rem; margin-bottom: 8px; }
+    .quick-card p { color: var(--muted-dark); font-size: 0.9rem; }
+
+    .panel-stack { position: relative; min-height: 620px; }
+    .panel {
+      display: none;
+      background: #ffffff; border-radius: 28px; padding: 28px;
+      border: 1px solid rgba(20,32,23,0.07);
+      box-shadow: 0 16px 40px rgba(15,31,21,0.07);
+      animation: fadeSlide 380ms ease;
+    }
+    .panel.active { display: block; }
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-head {
+      display: flex; justify-content: space-between; gap: 18px; align-items: end; flex-wrap: wrap; margin-bottom: 22px;
+    }
+    .section-head h3 { font-size: clamp(1.55rem, 3vw, 2.2rem); letter-spacing: -0.03em; }
+    .section-head p { color: var(--muted-dark); max-width: 760px; }
+
+    .about-grid, .content-grid, .contact-grid, .portfolio-grid, .metrics-grid, .cards-2col {
+      display: grid; gap: 22px;
+    }
+    .about-grid { grid-template-columns: 1.1fr 0.9fr; }
+    .content-grid { grid-template-columns: repeat(3, 1fr); }
+    .portfolio-grid { grid-template-columns: repeat(3, 1fr); }
+    .metrics-grid { grid-template-columns: repeat(4, 1fr); }
+    .cards-2col, .contact-grid { grid-template-columns: 1fr 1fr; }
+
+    .surface {
+      background: #f7fbf8; border-radius: 22px; padding: 22px; border: 1px solid rgba(20,32,23,0.06);
+    }
+    .surface h4 { font-size: 1.08rem; margin-bottom: 14px; }
+    .surface p, .surface li { color: #576459; }
+    .surface ul { padding-left: 18px; display: grid; gap: 10px; }
+
+    .about-hero {
+      display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: center;
+    }
+    .about-photo-large {
+      width: 200px; height: 200px; border-radius: 50%; padding: 7px; background: linear-gradient(135deg, #8ce0a2, #1c7a45);
+      box-shadow: var(--shadow-soft);
+    }
+    .about-photo-large img {
+      width: 100%; height: 100%; border-radius: 50%; object-fit: cover; background: #dfe9e1;
+    }
+
+    .badge-row, .meta-row {
+      display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+    }
+    .meta-row { color: #617065; font-size: 0.9rem; margin-bottom: 10px; }
+    .meta-chip, .badge {
+      display: inline-flex; align-items: center; gap: 6px; background: rgba(51,176,102,0.12); color: var(--primary-dark);
+      border-radius: 999px; padding: 7px 10px; font-weight: 700; font-size: 0.82rem;
+    }
+
+    .rating-list { display: grid; gap: 14px; }
+    .rating-item { display: grid; gap: 8px; }
+    .rating-head {
+      display: flex; justify-content: space-between; gap: 12px; align-items: center; font-weight: 600;
+    }
+    .rating-head span:last-child { color: var(--primary-dark); }
+    .rating-bar {
+      height: 10px; border-radius: 999px; background: rgba(20,32,23,0.08); overflow: hidden;
+    }
+    .rating-fill {
+      height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--primary), #89dfa0);
+    }
+
+    .yt-banner {
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 22px;
+    }
+    .yt-frame {
+      border-radius: 24px; overflow: hidden; min-height: 360px; background: #dfe9e1;
+      box-shadow: 0 18px 40px rgba(15,31,21,0.08);
+    }
+    .yt-frame iframe { width: 100%; min-height: 360px; border: 0; }
+
+    .blog-list, .notes-list, .jobs-list, .news-list { display: grid; gap: 16px; }
+    .item-card {
+      background: #f7fbf8; border: 1px solid rgba(20,32,23,0.06); border-radius: 22px; padding: 18px;
+    }
+    .item-card h4 { font-size: 1.08rem; margin-bottom: 8px; }
+    .item-card p { color: #5b685d; margin-bottom: 12px; }
+
+    .portfolio-card {
+      background: linear-gradient(180deg, #ffffff, #f6fbf7);
+      border-radius: 22px; padding: 22px; border: 1px solid rgba(20,32,23,0.06); box-shadow: var(--shadow-soft);
+    }
+    .portfolio-card h4 { margin-bottom: 10px; font-size: 1.06rem; }
+    .portfolio-card p { color: #5c6a5f; margin-bottom: 14px; }
+
+    .metric-card {
+      background: linear-gradient(180deg, #ffffff, #f7fbf8);
+      border-radius: 20px; padding: 18px; border: 1px solid rgba(20,32,23,0.06);
+      box-shadow: var(--shadow-soft);
+    }
+    .metric-card strong { display: block; font-size: 1.55rem; margin-bottom: 8px; color: var(--primary-dark); }
+    .metric-card p { color: #5f6d62; font-size: 0.93rem; }
+
+    .download-btn, .outline-btn {
+      display: inline-flex; align-items: center; gap: 9px; border-radius: 14px; padding: 12px 16px; font-weight: 700; font-size: 0.92rem;
+      transition: var(--transition);
+    }
+    .download-btn {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white;
+      box-shadow: 0 14px 28px rgba(51,176,102,0.18);
+    }
+    .outline-btn {
+      border: 1px solid rgba(20,32,23,0.11); color: var(--text-dark); background: white;
+    }
+    .download-btn:hover, .outline-btn:hover { transform: translateY(-2px); }
+
+    .feedback-form, .contact-form { display: grid; gap: 14px; }
+    input, textarea {
+      width: 100%; border: 1px solid rgba(20,32,23,0.12); background: #fff;
+      border-radius: 16px; padding: 14px 15px; font: inherit; color: var(--text-dark);
+      outline: none; transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    input:focus, textarea:focus {
+      border-color: rgba(28,122,69,0.7); box-shadow: 0 0 0 4px rgba(51,176,102,0.08);
+    }
+    textarea { min-height: 140px; resize: vertical; }
+
+    .contact-list { display: grid; gap: 14px; }
+    .contact-box {
+      display: flex; gap: 14px; align-items: flex-start; background: #f7fbf8; border-radius: 18px; padding: 16px; border: 1px solid rgba(20,32,23,0.06);
+    }
+    .contact-icon {
+      min-width: 44px; width: 44px; height: 44px; border-radius: 14px;
+      background: linear-gradient(135deg, rgba(51,176,102,0.16), rgba(51,176,102,0.06));
+      display: grid; place-items: center; font-size: 1.2rem;
+    }
+    .social-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+    .social-row a {
+      width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; font-size: 1.08rem;
+      box-shadow: 0 14px 30px rgba(51,176,102,0.16);
+    }
+
+    .news-toolbar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .live-dot { width: 10px; height: 10px; background: #ff4f4f; border-radius: 50%; box-shadow: 0 0 0 8px rgba(255,79,79,0.12); }
+    .update-stamp { color: #5f6b63; font-size: 0.92rem; }
+
+    .status-box {
+      margin-top: 10px; padding: 14px 16px; border-radius: 16px; background: rgba(51,176,102,0.08); color: var(--primary-dark); font-weight: 600;
+      display: none;
+    }
+    .status-box.show { display: block; }
+
+    footer { padding: 24px 0 46px; text-align: center; color: #66746a; }
+
+    @media (max-width: 1180px) {
+      .quick-grid { grid-template-columns: repeat(3, 1fr); }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 1080px) {
+      .hero-grid, .about-grid, .yt-banner, .contact-grid, .content-grid, .portfolio-grid, .cards-2col { grid-template-columns: 1fr; }
+      .quick-grid { grid-template-columns: repeat(2, 1fr); }
+      .panel-stack { min-height: auto; }
+      .about-hero { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .topbar-inner { display: block; }
+      .brand { margin-bottom: 14px; }
+      .nav-links { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; }
+      .hero { padding-top: 36px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .quick-grid, .stats, .metrics-grid { grid-template-columns: 1fr; }
+      .dashboard { padding: 16px; border-radius: 22px; }
+      .panel { padding: 20px; border-radius: 22px; }
+      .profile-wrap { grid-template-columns: 1fr; text-align: center; }
+      .avatar-shell, .about-photo-large { margin: 0 auto; }
+      .ticker-item { padding: 10px 18px; font-size: 0.86rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <div class="hero-orb"></div>
+    <div class="hero-orb-2"></div>
+
+    <div class="update-ticker" aria-label="Latest updates">
+      <div class="ticker-track">
+        <div class="ticker-item"><span class="ticker-dot"></span>Now showing latest updates in continuous linear motion</div>
+        <div class="ticker-item"><span class="ticker-dot"></span>Training section added with professional showcase</div>
+        <div class="ticker-item"><span class="ticker-dot"></span>Larger profile photo holder and stronger portfolio layout</div>
+        <div class="ticker-item"><span class="ticker-dot"></span>Skills and experience now displayed with rating bars</div>
+        <div class="ticker-item"><span class="ticker-dot"></span>Learn Krishi Official editing and digital work highlighted</div>
+        <div class="ticker-item"><span class="ticker-dot"></span>Now showing latest updates in continuous linear motion</div>
+        <div class="ticker-item"><span class="ticker-dot"></span>Training section added with professional showcase</div>
+        <div class="ticker-item"><span class="ticker-dot"></span>Larger profile photo holder and stronger portfolio layout</div>
+        <div class="ticker-item"><span class="ticker-dot"></span>Skills and experience now displayed with rating bars</div>
+        <div class="ticker-item"><span class="ticker-dot"></span>Learn Krishi Official editing and digital work highlighted</div>
+      </div>
+    </div>
+
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="brand-mark">HS</div>
+          <div>
+            <h1>Harichandra Singh</h1>
+            <p>Personal Branding Website • Agriculture Educator • Digital Creator</p>
+          </div>
+        </div>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <button class="active" data-panel="about">About</button>
+          <button data-panel="training">Training</button>
+          <button data-panel="portfolio">Portfolio</button>
+          <button data-panel="youtube">YouTube</button>
+          <button data-panel="blogs">Blogs</button>
+          <button data-panel="notes">PDF Notes</button>
+          <button data-panel="news">News</button>
+          <button data-panel="jobs">Jobs</button>
+          <button data-panel="contact">Contact</button>
+          <button data-panel="feedback">Feedback</button>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">🌿 Official Personal Website of Harichandra Singh</div>
+          <h2>Professional identity in <span>agriculture, training, and digital communication.</span></h2>
+          <p>
+            A smooth and attractive personal branding website for harichandrasingh.com.np — built to present your profile, training background, portfolio, YouTube work, blogs, public notes, latest updates, jobs, contact and feedback in one premium experience.
+          </p>
+          <div class="hero-actions">
+            <a href="#mainContent" class="btn btn-primary">Explore Website</a>
+            <button type="button" class="btn btn-secondary" data-panel-jump="portfolio">View Portfolio</button>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="profile-wrap">
+            <div class="avatar-shell">
+              <img src="profile-placeholder.svg" alt="Profile photo placeholder in circular frame" />
+            </div>
+            <div>
+              <small>Professional Highlight</small>
+              <h3>Harichandra Singh</h3>
+              <p>Agriculture Instructor, agriculture trainer, digital creator, website developer, and founder of Learn Krishi Official.</p>
+              <div class="badge-row" style="margin-top:12px;">
+                <span class="badge">Agriculture Instructor</span>
+                <span class="badge">Trainer</span>
+                <span class="badge">Video Editor</span>
+              </div>
+            </div>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>5+</strong><span>Professional roles, internships and field assignments</span></div>
+            <div class="stat"><strong>4+</strong><span>Hands-on practical training areas highlighted</span></div>
+            <div class="stat"><strong>1</strong><span>Educational brand: Learn Krishi Official</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <main class="main" id="mainContent">
+      <div class="dashboard">
+        <div class="quick-grid">
+          <article class="quick-card" data-panel-jump="about">
+            <small>01</small>
+            <h4>About Me</h4>
+            <p>Professional identity, strengths, ratings and profile overview.</p>
+          </article>
+          <article class="quick-card" data-panel-jump="training">
+            <small>02</small>
+            <h4>Training</h4>
+            <p>Practical trainings and technical hands-on capability showcase.</p>
+          </article>
+          <article class="quick-card" data-panel-jump="portfolio">
+            <small>03</small>
+            <h4>Portfolio</h4>
+            <p>Teaching, research, digital content and website work highlights.</p>
+          </article>
+          <article class="quick-card" data-panel-jump="notes">
+            <small>04</small>
+            <h4>Public PDF Notes</h4>
+            <p>Downloadable study materials for students and farmers.</p>
+          </article>
+          <article class="quick-card" data-panel-jump="news">
+            <small>05</small>
+            <h4>Latest News</h4>
+            <p>Fresh updates with live timestamp and smooth presentation.</p>
+          </article>
+        </div>
+
+        <div class="panel-stack">
+          <section class="panel active" id="panel-about">
+            <div class="section-head">
+              <div>
+                <h3>About Me</h3>
+                <p>A stronger professional introduction with improved profile image area, career highlights, core ratings and a more polished personal brand presentation.</p>
+              </div>
+            </div>
+
+            <div class="surface" style="margin-bottom:22px;">
+              <div class="about-hero">
+                <div class="about-photo-large">
+                  <img src="profile-placeholder.svg" alt="Large circular professional profile placeholder" />
+                </div>
+                <div>
+                  <h4 style="font-size:1.4rem; margin-bottom:12px;">Harichandra Singh</h4>
+                  <p style="margin-bottom:14px;">
+                    I am an agriculture professional from Nepal with experience in agriculture teaching, field-based extension, research support, laboratory practical work, farmer training, digital literacy, and educational media creation. I combine agriculture knowledge with digital tools to support students, farmers and online learners through training, video content and practical learning resources.
+                  </p>
+                  <div class="badge-row">
+                    <span class="badge">B.Sc. (Hons.) Agriculture</span>
+                    <span class="badge">Agriculture Instructor</span>
+                    <span class="badge">Learn Krishi Official</span>
+                    <span class="badge">Digital Agriculture Communicator</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="metrics-grid" style="margin-bottom:22px;">
+              <div class="metric-card">
+                <strong>4.9/5</strong>
+                <p>Teaching and training confidence in practical agriculture topics.</p>
+              </div>
+              <div class="metric-card">
+                <strong>4.8/5</strong>
+                <p>Field experience in extension, research trials and farmer support.</p>
+              </div>
+              <div class="metric-card">
+                <strong>4.7/5</strong>
+                <p>Digital literacy including MS Office, AI tools, Photoshop and websites.</p>
+              </div>
+              <div class="metric-card">
+                <strong>4.8/5</strong>
+                <p>Creative communication through video editing and educational content.</p>
+              </div>
+            </div>
+
+            <div class="about-grid">
+              <div class="surface">
+                <h4>Education</h4>
+                <ul>
+                  <li>B.Sc. (Hons.) Agriculture — Dolphin (P.G.) Institute of Biomedical &amp; Natural Science, Dehradun, India</li>
+                  <li>I.Sc. Agriculture — Shree Jalpa Secondary School, Bajhang</li>
+                  <li>SLC — Shree Lamatola Secondary School, Bajhang</li>
+                </ul>
+              </div>
+              <div class="surface">
+                <h4>Current Position &amp; Work Exposure</h4>
+                <ul>
+                  <li>Agriculture Instructor at Shree Veer Balbhadra Model Secondary School, Thabang, Rolpa</li>
+                  <li>Worked at Grain Legume Research Program (GLRP), Khajura, Banke</li>
+                  <li>Worked with PMAMP, PIU Bajhang in field-level technical support</li>
+                  <li>Contributed to Khaptadchhanna Rural Municipality agriculture activities</li>
+                </ul>
+              </div>
+              <div class="surface">
+                <h4>Professional Skills</h4>
+                <ul>
+                  <li>Potato and pulse field support, trial layout and crop observation</li>
+                  <li>Plant disease and pest identification with practical orientation</li>
+                  <li>Mushroom spawn preparation and culture preparation in laboratory</li>
+                  <li>Training delivery, facilitation and agriculture communication</li>
+                </ul>
+              </div>
+              <div class="surface">
+                <h4>Digital Strength</h4>
+                <ul>
+                  <li>MS Office, internet handling and routine computer operation</li>
+                  <li>Photoshop, AI tools, website development and digital design</li>
+                  <li>Video editing for personal educational YouTube channel</li>
+                  <li>Content planning and publishing for Learn Krishi Official</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cards-2col" style="margin-top:22px;">
+              <div class="surface">
+                <h4>Skills Rating</h4>
+                <div class="rating-list">
+                  <div class="rating-item">
+                    <div class="rating-head"><span>Agriculture Teaching</span><span>95%</span></div>
+                    <div class="rating-bar"><div class="rating-fill" style="width:95%"></div></div>
+                  </div>
+                  <div class="rating-item">
+                    <div class="rating-head"><span>Field Training &amp; Facilitation</span><span>92%</span></div>
+                    <div class="rating-bar"><div class="rating-fill" style="width:92%"></div></div>
+                  </div>
+                  <div class="rating-item">
+                    <div class="rating-head"><span>Mushroom Lab Work</span><span>88%</span></div>
+                    <div class="rating-bar"><div class="rating-fill" style="width:88%"></div></div>
+                  </div>
+                  <div class="rating-item">
+                    <div class="rating-head"><span>Digital Literacy &amp; MS Office</span><span>94%</span></div>
+                    <div class="rating-bar"><div class="rating-fill" style="width:94%"></div></div>
+                  </div>
+                  <div class="rating-item">
+                    <div class="rating-head"><span>Video Editing &amp; Content Creation</span><span>90%</span></div>
+                    <div class="rating-bar"><div class="rating-fill" style="width:90%"></div></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="surface">
+                <h4>Experience Rating</h4>
+                <div class="rating-list">
+                  <div class="rating-item">
+                    <div class="rating-head"><span>Agriculture Instructor Experience</span><span>93%</span></div>
+                    <div class="rating-bar"><div class="rating-fill" style="width:93%"></div></div>
+                  </div>
+                  <div class="rating-item">
+                    <div class="rating-head"><span>Research &amp; Trial Management</span><span>89%</span></div>
+                    <div class="rating-bar"><div class="rating-fill" style="width:89%"></div></div>
+                  </div>
+                  <div class="rating-item">
+                    <div class="rating-head"><span>Extension &amp; Farmer Support</span><span>91%</span></div>
+                    <div class="rating-bar"><div class="rating-fill" style="width:91%"></div></div>
+                  </div>
+                  <div class="rating-item">
+                    <div class="rating-head"><span>Digital Communication</span><span>90%</span></div>
+                    <div class="rating-bar"><div class="rating-fill" style="width:90%"></div></div>
+                  </div>
+                  <div class="rating-item">
+                    <div class="rating-head"><span>Professional Presentation</span><span>92%</span></div>
+                    <div class="rating-bar"><div class="rating-fill" style="width:92%"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-training">
+            <div class="section-head">
+              <div>
+                <h3>Training Section</h3>
+                <p>A dedicated showcase of practical trainings, technical learning and skill-building areas that strengthen your personal brand.</p>
+              </div>
+            </div>
+            <div class="content-grid">
+              <article class="item-card">
+                <div class="meta-row"><span class="meta-chip">Hands-on Training</span><span>Food Processing</span></div>
+                <h4>Potato Chips Making Training</h4>
+                <p>Experience in practical food processing methods, product preparation and value addition skills useful for entrepreneurship and student learning.</p>
+              </article>
+              <article class="item-card">
+                <div class="meta-row"><span class="meta-chip">Production Training</span><span>Mushroom</span></div>
+                <h4>Mushroom Production Training</h4>
+                <p>Knowledge in mushroom production systems with practical exposure linked to media content, training support and field-based demonstration potential.</p>
+              </article>
+              <article class="item-card">
+                <div class="meta-row"><span class="meta-chip">Plant Health</span><span>Diagnostic Support</span></div>
+                <h4>Plant Clinic Training</h4>
+                <p>Practical understanding of plant health observation, disease-pest identification and guidance-oriented farmer support approaches.</p>
+              </article>
+              <article class="item-card">
+                <div class="meta-row"><span class="meta-chip">Organic Practice</span><span>Soil Health</span></div>
+                <h4>Vermicompost Preparation Training</h4>
+                <p>Suitable exposure in organic nutrient management and composting systems for sustainable farming education and extension communication.</p>
+              </article>
+              <article class="item-card">
+                <div class="meta-row"><span class="meta-chip">Lab Work</span><span>Mushroom</span></div>
+                <h4>Spawn Preparation &amp; Culture Preparation</h4>
+                <p>Worked on laboratory-based mushroom spawn preparation and culture preparation, reflecting both practical and technical confidence.</p>
+              </article>
+              <article class="item-card">
+                <div class="meta-row"><span class="meta-chip">Training Strength</span><span>Communication</span></div>
+                <h4>Facilitation &amp; Demonstration Ability</h4>
+                <p>Comfortable in explaining concepts, guiding learners and presenting practical agriculture topics in student-friendly and farmer-friendly style.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-portfolio">
+            <div class="section-head">
+              <div>
+                <h3>Portfolio Section</h3>
+                <p>A professional portfolio area highlighting your best work in agriculture education, research support, digital communication and creative production.</p>
+              </div>
+            </div>
+            <div class="portfolio-grid">
+              <div class="portfolio-card">
+                <div class="meta-row"><span class="meta-chip">Teaching</span><span>Academic Profile</span></div>
+                <h4>Agriculture Instruction</h4>
+                <p>Delivering agriculture-related education with practical orientation for students in technical stream and school-level learning environments.</p>
+                <a class="outline-btn" href="#">Academic Profile</a>
+              </div>
+              <div class="portfolio-card">
+                <div class="meta-row"><span class="meta-chip">Research Support</span><span>Field &amp; Lab</span></div>
+                <h4>GLRP Research Experience</h4>
+                <p>Worked on experimental field layout, trial management, soil testing, seed testing, data recording and plant health assessment.</p>
+                <a class="outline-btn" href="#">Research Highlights</a>
+              </div>
+              <div class="portfolio-card">
+                <div class="meta-row"><span class="meta-chip">Digital Brand</span><span>YouTube</span></div>
+                <h4>Learn Krishi Official</h4>
+                <p>Creating educational videos, agriculture explainers and audience-oriented content for students, farmers and general viewers.</p>
+                <a class="outline-btn" href="https://www.youtube.com/@LearnKrishiOfficial" target="_blank" rel="noopener noreferrer">Open Channel</a>
+              </div>
+              <div class="portfolio-card">
+                <div class="meta-row"><span class="meta-chip">Creative Work</span><span>Editing</span></div>
+                <h4>Video Editing &amp; Content Packaging</h4>
+                <p>Editing content for personal YouTube channel with focus on clean presentation, audience engagement and educational clarity.</p>
+                <a class="outline-btn" href="#">Creative Work</a>
+              </div>
+              <div class="portfolio-card">
+                <div class="meta-row"><span class="meta-chip">Digital Tools</span><span>Web &amp; AI</span></div>
+                <h4>Website Development &amp; AI Use</h4>
+                <p>Comfortable using websites, basic development workflows, digital tools, AI support and online content systems for practical work.</p>
+                <a class="outline-btn" href="#">Digital Portfolio</a>
+              </div>
+              <div class="portfolio-card">
+                <div class="meta-row"><span class="meta-chip">Field Communication</span><span>Extension</span></div>
+                <h4>Farmer Support &amp; Demonstration</h4>
+                <p>Technical support, demonstrations, field verification and communication-oriented extension exposure in local agriculture settings.</p>
+                <a class="outline-btn" href="#">Field Portfolio</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-youtube">
+            <div class="section-head">
+              <div>
+                <h3>YouTube Channel Section</h3>
+                <p>A premium showcase area for Learn Krishi Official with featured content and direct connection to your digital brand.</p>
+              </div>
+            </div>
+            <div class="yt-banner">
+              <div class="yt-frame">
+                <iframe src="https://www.youtube.com/embed/W0EsodTqgpI" title="Learn Krishi Official featured video" allowfullscreen></iframe>
+              </div>
+              <div class="surface">
+                <h4>Learn Krishi Official</h4>
+                <p>
+                  This section strengthens your personal brand by connecting website visitors directly to your educational video content and your own edited visual communication style.
+                </p>
+                <div class="meta-row">
+                  <span class="meta-chip">Agriculture Education</span>
+                  <span class="meta-chip">Video Editing</span>
+                  <span class="meta-chip">Student &amp; Farmer Focus</span>
+                </div>
+                <a class="download-btn" href="https://www.youtube.com/@LearnKrishiOfficial" target="_blank" rel="noopener noreferrer">Visit Channel</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-blogs">
+            <div class="section-head">
+              <div>
+                <h3>Blogs Section</h3>
+                <p>A clean card-based blog area to publish agriculture articles, practical notes, educational posts and personal website updates.</p>
+              </div>
+            </div>
+            <div class="blog-list">
+              <article class="item-card">
+                <div class="meta-row">
+                  <span class="meta-chip">Featured Blog</span>
+                  <span>Practical Agriculture</span>
+                </div>
+                <h4>How to build trust as an agriculture educator online</h4>
+                <p>Use your blog to publish field-based insights, local farming tips, job updates, agriculture notes and educational explainers for Nepali audiences.</p>
+                <a class="outline-btn" href="#">Read Article</a>
+              </article>
+              <article class="item-card">
+                <div class="meta-row">
+                  <span class="meta-chip">SEO Blog</span>
+                  <span>Student Resource</span>
+                </div>
+                <h4>Best way to share agriculture notes and training materials</h4>
+                <p>Show case studies, class materials, training outputs and practical manuals so students and farmers return to the website regularly.</p>
+                <a class="outline-btn" href="#">Read Article</a>
+              </article>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-notes">
+            <div class="section-head">
+              <div>
+                <h3>Agriculture PDF Notes</h3>
+                <p>These note cards are public and directly downloadable. No login is required.</p>
+              </div>
+            </div>
+            <div class="notes-list">
+              <article class="item-card">
+                <div class="meta-row"><span class="meta-chip">Public Download</span><span>PDF Resource</span></div>
+                <h4>Agronomy Basics Notes</h4>
+                <p>Basic crop production concepts, field management, nutrient planning and agronomy highlights.</p>
+                <a class="download-btn" href="agronomy-basics-notes.pdf" download>Download PDF</a>
+              </article>
+              <article class="item-card">
+                <div class="meta-row"><span class="meta-chip">Public Download</span><span>PDF Resource</span></div>
+                <h4>Soil Science Quick Notes</h4>
+                <p>Soil texture, structure, fertility basics, pH, organic matter and nutrient management summary.</p>
+                <a class="download-btn" href="soil-science-quick-notes.pdf" download>Download PDF</a>
+              </article>
+              <article class="item-card">
+                <div class="meta-row"><span class="meta-chip">Public Download</span><span>PDF Resource</span></div>
+                <h4>Plant Protection Essentials</h4>
+                <p>Introduction to common crop pests and diseases, basic identification and general management ideas.</p>
+                <a class="download-btn" href="plant-protection-essentials.pdf" download>Download PDF</a>
+              </article>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-news">
+            <div class="section-head">
+              <div>
+                <h3>Latest News &amp; Updates</h3>
+                <p>This section is designed for fresh updates. It shows a live refresh timestamp and rotating update cards.</p>
+              </div>
+              <div class="news-toolbar">
+                <span class="live-dot"></span>
+                <span class="update-stamp" id="updateStamp">Updating...</span>
+                <button class="outline-btn" type="button" id="refreshNewsBtn">Refresh Updates</button>
+              </div>
+            </div>
+            <div class="news-list" id="newsList"></div>
+          </section>
+
+          <section class="panel" id="panel-jobs">
+            <div class="section-head">
+              <div>
+                <h3>Jobs / Vacancy Section</h3>
+                <p>Promote opportunities for agriculture graduates, trainers, technicians, NGOs and farm management roles.</p>
+              </div>
+            </div>
+            <div class="jobs-list">
+              <article class="item-card">
+                <div class="meta-row"><span class="meta-chip">Open Position</span><span>Agriculture Extension</span></div>
+                <h4>Agriculture Officer</h4>
+                <p>Suitable for NGO, project and extension-based roles involving field visits, training and farmer support.</p>
+                <a class="outline-btn" href="#">View Vacancy</a>
+              </article>
+              <article class="item-card">
+                <div class="meta-row"><span class="meta-chip">Field Role</span><span>Commercial Farm</span></div>
+                <h4>Farm Supervisor / Farm Manager</h4>
+                <p>Useful for posting openings related to crop supervision, labor management and farm planning.</p>
+                <a class="outline-btn" href="#">View Vacancy</a>
+              </article>
+              <article class="item-card">
+                <div class="meta-row"><span class="meta-chip">Technical Role</span><span>Training &amp; Support</span></div>
+                <h4>Field Technician / Trainer</h4>
+                <p>Ideal for seed companies, agri-input firms, research support projects and demonstration-based roles.</p>
+                <a class="outline-btn" href="#">View Vacancy</a>
+              </article>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-contact">
+            <div class="section-head">
+              <div>
+                <h3>Contact Section</h3>
+                <p>A direct contact and social media area to help visitors connect with you quickly.</p>
+              </div>
+            </div>
+            <div class="contact-grid">
+              <div class="contact-list">
+                <div class="contact-box">
+                  <div class="contact-icon">📧</div>
+                  <div>
+                    <strong>Email</strong>
+                    <p>harichandrasingh222@gmail.com</p>
+                  </div>
+                </div>
+                <div class="contact-box">
+                  <div class="contact-icon">📞</div>
+                  <div>
+                    <strong>Phone</strong>
+                    <p>+977 9840213344</p>
+                  </div>
+                </div>
+                <div class="contact-box">
+                  <div class="contact-icon">📍</div>
+                  <div>
+                    <strong>Address</strong>
+                    <p>Khaptadchhanna Rural Municipality 02, Bajhang, Nepal</p>
+                  </div>
+                </div>
+                <div class="social-row">
+                  <a href="https://www.youtube.com/@LearnKrishiOfficial" target="_blank" rel="noopener noreferrer" title="YouTube">▶</a>
+                  <a href="mailto:learnkrishiofficial@gmail.com" title="Email">✉</a>
+                  <a href="https://facebook.com/harishsin9h" target="_blank" rel="noopener noreferrer" title="Facebook">f</a>
+                  <a href="https://instagram.com/learnkrishiofficial" target="_blank" rel="noopener noreferrer" title="Instagram">◎</a>
+                </div>
+              </div>
+              <div class="surface">
+                <h4>Quick Contact Form</h4>
+                <form class="contact-form" onsubmit="showStatus(event, 'contactStatus', 'Thank you. Your contact message has been submitted.')">
+                  <input type="text" placeholder="Your name" required>
+                  <input type="email" placeholder="Your email" required>
+                  <textarea placeholder="Write your message" required></textarea>
+                  <button class="download-btn" type="submit">Send Message</button>
+                </form>
+                <div class="status-box" id="contactStatus"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-feedback">
+            <div class="section-head">
+              <div>
+                <h3>Feedback Section</h3>
+                <p>Collect public feedback, suggestions and website responses in a professional way.</p>
+              </div>
+            </div>
+            <div class="surface">
+              <form class="feedback-form" onsubmit="showStatus(event, 'feedbackStatus', 'Thank you for your feedback. Your response has been recorded.')">
+                <input type="text" placeholder="Your full name" required>
+                <input type="text" placeholder="Subject" required>
+                <textarea placeholder="Write your feedback, suggestion or review" required></textarea>
+                <button class="download-btn" type="submit">Submit Feedback</button>
+              </form>
+              <div class="status-box" id="feedbackStatus"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="container">
+      <p>© 2026 Harichandra Singh • Professional personal branding website design</p>
+    </footer>
+  </div>
+
+  <script>
+    const navButtons = document.querySelectorAll('.nav-links button');
+    const quickJumpCards = document.querySelectorAll('[data-panel-jump]');
+    const panels = document.querySelectorAll('.panel');
+
+    function openPanel(name) {
+      navButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.panel === name));
+      panels.forEach(panel => panel.classList.toggle('active', panel.id === `panel-${name}`));
+      document.getElementById('mainContent').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    navButtons.forEach(button => {
+      button.addEventListener('click', () => openPanel(button.dataset.panel));
+    });
+
+    quickJumpCards.forEach(card => {
+      card.addEventListener('click', () => openPanel(card.dataset.panelJump));
+    });
+
+    function showStatus(event, id, message) {
+      event.preventDefault();
+      const box = document.getElementById(id);
+      box.textContent = message;
+      box.classList.add('show');
+      event.target.reset();
+    }
+
+    const newsData = [
+      {
+        tag: 'Profile Upgrade',
+        title: 'Training section professionally added',
+        description: 'The website now includes a dedicated training section covering potato chips making, mushroom production, plant clinic and vermicompost preparation.'
+      },
+      {
+        tag: 'Design Update',
+        title: 'Larger circular profile holder is now active',
+        description: 'The hero profile area and About section now use a bigger photo frame for stronger visual branding.'
+      },
+      {
+        tag: 'Portfolio Update',
+        title: 'Portfolio section added for digital and field work',
+        description: 'Teaching, research support, website work, video editing and YouTube brand presence are now highlighted in one place.'
+      },
+      {
+        tag: 'Skills Display',
+        title: 'Skills and experience ratings added',
+        description: 'Core strengths are now shown with rating bars to make the About section look more professional and visually engaging.'
+      },
+      {
+        tag: 'Top Motion Update',
+        title: 'Latest updates ticker now moves in continuous linear motion',
+        description: 'The old top update box has been redesigned into a moving line-style ticker for a more modern homepage feel.'
+      }
+    ];
+
+    const newsList = document.getElementById('newsList');
+    const updateStamp = document.getElementById('updateStamp');
+
+    function refreshTimestamp() {
+      const now = new Date();
+      updateStamp.textContent = 'Last refreshed: ' + now.toLocaleString('en-US', {
+        timeZone: 'Asia/Kathmandu',
+        year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit'
+      }) + ' (NPT)';
+    }
+
+    function renderNews() {
+      const rotated = [...newsData].sort(() => Math.random() - 0.5);
+      newsList.innerHTML = rotated.map(item => `
+        <article class="item-card">
+          <div class="meta-row"><span class="meta-chip">${item.tag}</span><span>Latest website update</span></div>
+          <h4>${item.title}</h4>
+          <p>${item.description}</p>
+          <a class="outline-btn" href="#">Learn More</a>
+        </article>
+      `).join('');
+      refreshTimestamp();
+    }
+
+    document.getElementById('refreshNewsBtn').addEventListener('click', renderNews);
+    renderNews();
+  </script>
+</body>
+</html>
